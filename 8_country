@@ -1,0 +1,30 @@
+#!/bin/bash
+
+
+printf "Enter the name of a country: France, Monaco, Spain, Mexico, San Marino, Switzerland, Vatican City \n"
+read COUNTRY
+
+echo -n "The official language of $COUNTRY is "
+
+
+COUNTRY_NORM=$(echo $COUNTRY | tr [:lower:] [:upper:])
+
+case $COUNTRY_NORM in
+
+  FRANCE | MONACO)
+    echo -n "French"
+    ;;
+
+  SPAIN | MEXICO)
+    echo -n "Spanish"
+    ;;
+
+  ITALY | "SAN MARINO" | SWITZERLAND | "VATICAN CITY")
+    echo -n "Italian"
+    ;;
+
+  *)
+    echo -n "unknown"
+    ;;
+esac
+echo ""
